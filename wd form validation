@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>Regular expression</title>
+  
+</head>
+<body>
+  <form action="#">
+    <input type="text" id="textbox" placeholder="Username">
+    <button onclick="expression()" type="submit">Submit</button>
+  </form>
+  <script>
+    function expression()
+    {
+      var name = document.getElementById("textbox").value;
+      var regx = /^[A-Za-z]+$/ ;
+      if(regx.test(name))
+      {
+        alert(" you have entered Valid Username");
+      }
+      else
+      {
+        alert(" you have entered Invalid Username");
+      }
+    }
+  </script>
+</body>
+</html>
