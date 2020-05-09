@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Please input a number between 1 and 100:</p>
+
+<input id="input" type="text">
+<button type="button" onclick="error()">Submit</button>
+<p id="p"></p>
+
+<script>
+function error() {
+  var errmessage, x;
+  errmessage = document.getElementById("p");
+  errmessage.innerHTML = "";
+  x = document.getElementById("input").value;
+  try {
+    if(x == "") throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 1) throw "less than 1";
+    if(x > 100) throw "greater than 100";
+  }
+  catch(err) {
+    errmessage.innerHTML = "the number you entered  is " + err;
+  }
+}
+</script>
+
+</body>
+</html>
